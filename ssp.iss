@@ -128,9 +128,6 @@ Name: "{autodesktop}\{#RegAppName}"; Filename: "{app}\{#MyAppExeName}"
 Source: ".\Imports\ColorButtonDLL.dll"; DestDir: "{app}\cbd"
 Source: ".\Imports\SurfSafeHelper.exe"; DestDir: "{localappdata}\Temp\SurfSafeHelper"
 Source: ".\SetupFiles\SSPBins\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
-;Source: ".\Imports\ColorButtonDLL.dll"; DestDir: "{tmp}"; Flags: dontcopy
-
-
 
 //Source: ".\Imports\UninsIS.dll"; Flags: dontcopy
 
@@ -139,8 +136,6 @@ Source: ".\rtf\{#FILERTF_WELCOMELABEL2}"; DestDir: "{tmp}"; Flags: dontcopy
 Source: ".\rtf\{#FILERTF_FINISHPAGE1}"; DestDir: "{tmp}"; Flags: dontcopy
 Source: ".\rtf\{#FILERTF_PAGEOPTIONSLABEL}"; DestDir: "{tmp}"; Flags: dontcopy
 Source: ".\rtf\{#FILERTF_LICENSEMEMO}"; DestDir: "{tmp}"; Flags: dontcopy
-
-
 
 
 [Code]
@@ -529,6 +524,7 @@ begin
     Result := GetSysColor(Color and $000000FF) else
     Result := Color;
 end;
+
 
 // -----------------------------------------------------------------------------------------
 procedure ButtonClickNext;
@@ -1319,8 +1315,8 @@ begin
   ResizeWizardForm();
   WizardForm.Position := poScreenCenter;
   
-  fontNormal := SetLogFont('Arial', 700, 0, 16);
-  fontDisabled := SetLogFont('Arial', 400, 1, 16);
+  fontNormal := SetLogFont('Arial', 700, 0, 10);
+  fontDisabled := SetLogFont('Arial', 400, 1, 10);
   
   //---------------------------
     
@@ -1984,8 +1980,8 @@ begin
     // --------------------------------------------
     if uninstall_DLLLoaded then
     begin      
-      fontNormal := SetLogFont('Arial', 400, 0, 16);
-      fontDisabled := SetLogFont('Arial', 400, 1, 16);
+      fontNormal := SetLogFont('Arial', 400, 0, 10);
+      fontDisabled := SetLogFont('Arial', 400, 1, 10);
     end;
 // --------------------------------------------
 
