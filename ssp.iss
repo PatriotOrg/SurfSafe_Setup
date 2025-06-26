@@ -2086,9 +2086,10 @@ begin
     
     PreserveRadioButton := TNewRadioButton.Create(UninstallProgressForm);
     PreserveRadioButton.Parent := UninstallPage;
-    PreserveRadioButton.Top := PageLabel.Top + ScaleY(40);
+    PreserveRadioButton.Top := PageLabel.Top + PageLabel.Height + ScaleY(20);
     PreserveRadioButton.Left := PageLabel.Left;
     PreserveRadioButton.Width := ScaleX(250);
+    PreserveRadioButton.Height := ScaleY(30);
     PreserveRadioButton.Font.Style := [fsBold];
     PreserveRadioButton.Font.Size := 9;
     PreserveRadioButton.Font.Color := SETUP_COLOR;
@@ -2100,6 +2101,7 @@ begin
     RemoveRadioButton.Top := PreserveRadioButton.Top + PreserveRadioButton.Height + ScaleY(12);
     RemoveRadioButton.Left := PageLabel.Left;
     RemoveRadioButton.Width := ScaleX(250);
+    RemoveRadioButton.Height := ScaleY(30);
     RemoveRadioButton.Font.Style := [fsBold];
     RemoveRadioButton.Font.Size := 9;
     RemoveRadioButton.Font.Color := SETUP_COLOR;
