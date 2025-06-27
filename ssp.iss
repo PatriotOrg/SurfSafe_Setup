@@ -112,10 +112,10 @@ SetupLogging = yes
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
 
-;[LangOptions]
-;DialogFontSize = 10
-;WelcomeFontName=Arial
-;WelcomeFontSize=14
+[LangOptions]
+DialogFontSize = 10
+WelcomeFontName=Arial
+WelcomeFontSize=14
 
 
 [Icons]
@@ -1702,6 +1702,7 @@ begin
     if InstallServices() > 0 then
     begin
       SuppressibleMsgBox('Errors encountered while installing the services. Please check setup logs.', mbError, MB_OK, IDOK);
+      Abort;
     end;
     
     WriteAppRegistry();  
